@@ -1,0 +1,23 @@
+{
+  "name": "javascript-amicgoscode-some-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "javascriptPractice.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Habibur-Rahman0927/javascript-amicgoscode-some-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Habibur-Rahman0927/javascript-amicgoscode-some-practice/issues"
+  },
+  "homepage": "https://github.com/Habibur-Rahman0927/javascript-amicgoscode-some-practice#readme",
+  "dependencies": {
+    "co": "^4.6.0"
+  }
+}

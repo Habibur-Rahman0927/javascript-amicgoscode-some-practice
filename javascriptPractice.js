@@ -292,6 +292,297 @@ console.log('javascript');
 // }
 // const numbers = [1, 5, 9];
 // console.log(...numbers)
+// console.log([...numbers])
 // // const addition = addNumbers(numbers[0],numbers[1], numbers[2]);//bad code
 // const addition = addNumbers(...numbers);
 // console.log(addition);
+
+/* Spread Operator Objects */
+
+// const address = {
+//     city : "Dhaka",
+//     country : "BANGLADESH",
+//     postCode: "LA44"
+// };
+// const name = {
+//     firstName : 'Habib',
+//     lastName: 'Rock'
+// }
+// const personSpread = {...name,...address};
+// console.log(JSON.stringify(personSpread, null,2));
+
+/* Arrow Funtions */
+
+// const hello = function(){
+//     const es6 = 'ES6';
+//     return `Hello ${es6}`;
+// }
+// const powers = [1,2,3,4,5,6].map((number, index) => Math.pow(number, index));
+// const add = (n1, n2)=> n1+n2;
+// const milesToKm = (miles)=> miles*1.60934;
+
+// console.log(hello());
+// console.log(...powers);
+// console.log(powers);
+// console.log(add(100,100));
+// console.log(milesToKm(100));
+
+/* Lexical this  */
+
+// const personLexi = {
+//     name: 'Alex',
+//     cars: ['ferrari', 'lombo'],
+//     toString: function(){
+//         // console.log(`${this.name} has ${this.cars}`);
+//         // const that = this;
+//         this.cars.forEach(car => {
+//             console.log(`${this.name} has ${car}`);//binifat of arrow funtion
+//         }/* .bind(this) */);
+//     }
+// }
+
+// personLexi.toString();
+
+
+/* Enhanced Object prooerties */
+
+// const pricePropName = "PRICE";
+
+// const calculator = (name, price) => {
+//     return {
+//         name/* :name */,
+//         /* add: (n1, n2) => {
+//             return n1 + n2;
+//         } */
+//         add(n1, n2) {
+//             return n1 + n2;
+//         },
+//         [pricePropName.toLowerCase()]:price
+//     }
+// }
+// const calc = calculator('casio', 19.36);
+// console.log(calc);
+// console.log(calc.add(10, 30));
+// console.log(calc.price);
+
+/* Array Descruturing */
+
+// const names = ["anna", "Mariam", "Jeo","Mark", "Matt"];
+// // const anna = names[0];
+// // const mariam = names[1];
+// // const jeo = names[2];
+
+// const [anna, mariam, jeo, ...restOfNames] = names;
+
+// console.log(`${anna} ${mariam} ${jeo}`);
+// console.log(restOfNames);
+
+/* Object Descruturing */
+
+// const getUser = ()=>{
+//     return{
+//         name: "john",
+//         surename: "Doe",
+//         gender: 'male',
+//         age:22,
+//         address: {
+//             country: "United states",
+//             city: 'california',
+//             fullAddress: {
+//                 doorNumber: 100,
+//                 street:'LA st'
+//             }
+//         }
+//     }
+// }
+
+// const user = getUser()
+// const {name, age, address:{country,fullAddress:{doorNumber}}} = user;
+// console.log(name);
+// console.log(age);
+// console.log(country);
+// console.log(doorNumber);
+
+
+/* Function default Parameters */
+
+// const calculatePay = (yearSalary, bouns = {
+//     teamBonus: 0,
+//     employeeBonus: 0
+// }) => {
+//     return yearSalary + bouns.teamBonus + bouns.employeeBonus;
+// }
+
+
+// console.log(calculatePay(22000,{teamBonus:1000, employeeBonus:2000}));
+
+
+/* Classes */
+
+/* class Animal {
+    constructor(name, age) {
+        console.log(`${name} is an animal and was created`);
+        this.name = name;
+        this.age = age;
+    }
+    static iAmAStaticMethod(){
+        console.log('I am a static method inside of and animal class');
+    }
+
+    eat(){
+        console.log(`${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`${this.name} is eating`);
+    }
+    wakeUp(){
+        console.log(`${this.name} is waking up`);
+    }
+    logAge(){
+        console.log(`${this.name} is ${this.age} years old`);
+    }
+} */
+
+/* Inheritance */
+/* class Dog extends Animal{
+    constructor(name, age, breed){
+        super(name, age);
+        this.breed = breed;
+    }
+    logBreed(){
+        console.log(`${this.name} is a ${this.breed}`);
+    }
+    logAgeFromDog(){
+        super.logAge();
+    }
+} */
+
+/* 
+class Cat extends Animal{
+    constructor(name, age){
+        super(name, age);
+        
+    }
+    logBreed(){
+        console.log(`${this.name} is a`);
+    }
+    logAgeFromCat(){
+        super.logAge();
+    }
+} */
+
+// Animal.iAmAStaticMethod();
+// const Josh = new Cat('Josh', 5);
+// Josh.logBreed();
+// Josh.logAgeFromCat();
+// console.log("--------------");
+// const mike = new Dog('Mike', 5, "Bulldog");
+// mike.logBreed();
+// mike.logAgeFromDog();
+
+/* const bobby = new Animal("bobby", 2);
+bobby.eat();
+bobby.sleep();
+bobby.wakeUp();
+bobby.logAge()
+
+console.log("------------");
+const marshall = new Animal("Marshall", 3);
+marshall.eat();
+marshall.sleep();
+marshall.wakeUp();
+marshall.logAge(); */
+
+/* Promises */
+
+// const promise = new Promise((resolve, reject) =>{
+//     setTimeout(() =>{
+//         resolve("Data back from the sever");
+//     }, 3000);
+//     setTimeout(() =>{
+//         reject("NO!!!!!!!, Data back from the sever");
+//     }, 4000);
+// });
+
+// promise.then(res => {
+//     console.log(res);
+// }).catch(error =>{
+//     console.log(error);
+// })
+
+// const nameesPromise = new Promise((resolve, reject) =>{
+//     setTimeout(() =>{
+//         resolve(["Data", "back",'from', 'the', "sever"]);
+//     }, 3000);
+//     setTimeout(() =>{
+//         reject("NO!!!!!!!, Data back from the sever");
+//     }, 4000);
+// });
+
+// const surnameesPromise = new Promise((resolve, reject) =>{
+//     setTimeout(() =>{
+//         resolve(["Willemas", "Bravo",'Mohammod', 'the', "sfa"]);
+//     }, 3000);
+//     setTimeout(() =>{
+//         reject("NO!!!!!!!, Data back from the sever");
+//     }, 4000);
+// });
+
+// Promise.all([nameesPromise, surnameesPromise]).then(data => {
+//     // console.log(data);
+//     const [names, surnames] = data;
+//     for (let i = 0; i < names.length; i++) {
+//         const name = names[i];
+//         const surname = surnames[i];
+//         console.log(`${name} ${surname}`);
+
+//     }
+// }).catch(error => {
+//     console.log(error);
+// })
+
+
+
+/* index.html here Promises and Fetch Api */
+
+/* generators */
+
+/* generator object */
+// const getNumebrs = function* () {
+//     yield 1;
+//     yield "Hello";
+//     yield true;
+//     yield { name: "Habib" };
+//     return "I am Done"
+// }
+
+// const numberGen = getNumebrs();
+// console.log(numberGen.next().value);
+// console.log(numberGen.next().value);
+// console.log(numberGen.next().value);
+// console.log(numberGen.next().value);
+// console.log(numberGen.next().value);
+// console.log(numberGen.next().value);
+
+
+const getNumbers = function*(numbers){
+    for (let i = 0; i < numbers.length; i++) {
+         yield numbers[i];
+        
+    }
+}
+
+const getNumbersGen = getNumbers([1,2,3,4,5,6,7,8,9]);
+
+const interval = setInterval(() =>{
+    const next = getNumbersGen.next();
+    // console.log(next);
+    if(next.done){
+        console.log("this generator is done");
+        clearInterval(interval);
+    }else{
+        const number = next.value;
+        console.log(number);
+    }
+},1000)
+

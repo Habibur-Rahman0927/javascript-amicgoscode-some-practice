@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <div>
+        <ul></ul>
+    </div>
+    <script>
+        // const randomName = (n) => {
+        //     fetch(`https://randomuser.me/api/?results=${n}`)
+        //         .then(res => res.json())
+        //         .then(data => display(data.results));
+        //         }
+        // randomName(5);
+
+        const randomName = async n => {
+            await fetch(`https://randomuser.me/api/?results=${n}`)
+                 .then(res => res.json())
+                .then(data => display(data.results));
+                }
+        randomName(5)
+
+
+        const ul = document.querySelector('ul');
+        const display = (data) =>{
+            data.forEach(data => {
+                const {gender, email} =data;
+                const li = document.createElement('li');
+                    li.textContent = `${email}`;
+
+                    ul.appendChild(li);
+                // ul.innerHTML= `<li>${email}</li>`;
+            });
+        }
+
+        /* Async Await */
+        async function logName(name){
+            console.log(name);
+            const transformName = new Promise((resolve, reject) => {
+                setTimeout(() => resolve(name.toUpperCase()), 5000);
+            });
+            const result = await transformName;
+            console.log(result);
+            return name;
+        }
+        logName("Habib").then(res => console.log("Result from async function = "+ res));
+
+        
+
+    </script>
+</body>
+</html>
